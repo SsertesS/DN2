@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reckful - Спортивное питание</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .cart-item-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        #cartDropdown {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <jpg src="https://ltdfoto.ru/image/s0Qd2L" class="h-10 mr-3">
+                <h1 class="text-2xl font-bold text-gray-800">Reckful</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#products" class="text-gray-700 hover:text-blue-600 font-medium">Товары</a>
+                <a href="#articles" class="text-gray-700 hover:text-blue-600 font-medium">Статьи</a>
+                <a href="#bju-calculator" class="text-gray-700 hover:text-blue-600 font-medium">Калькулятор БЖУ</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">О нас</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button id="cartButton" class="text-gray-700 hover:text-blue-600 relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cartItemCount" class="cart-item-count hidden">0</span>
+                    </button>
+                    <div id="cartDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-200">
+                        <div class="px-4 py-2 border-b border-gray-200">
+                            <h3 class="font-semibold text-gray-800">Корзина</h3>
+                        </div>
+                        <div id="cartItems" class="px-4 py-2">
+                            <p class="text-gray-500 text-center py-4">Корзина пуста</p>
+                        </div>
+                        <div class="px-4 py-2 border-t border-gray-200">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Итого:</span>
+                                <span id="cartTotal" class="font-bold">0 ₽</span>
+                            </div>
+                            <button id="checkoutButton" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Оформить заказ</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 py-2 px-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#products" class="text-gray-700 hover:text-blue-600 py-1">Товары</a>
+                <a href="#articles" class="text-gray-700 hover:text-blue-600 py-1">Статьи</a>
+                <a href="#bju-calculator" class="text-gray-700 hover:text-blue-600 py-1">Калькулятор БЖУ</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 py-1">О нас</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Лучшее спортивное питание</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Качественные продукты для достижения ваших спортивных целей</p>
+            <a href="#products" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Каталог товаров</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Наши товары</h2>
+            
+            <!-- Filters -->
+            <div class="mb-8 bg-gray-100 p-4 rounded-lg">
+                <h3 class="font-semibold mb-3 text-gray-700">Фильтры:</h3>
+                <div class="flex flex-wrap gap-3">
+                    <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-md bg-white">
+                        <option value="all">Все категории</option>
+                        <option value="protein">Протеин</option>
+                        <option value="amino">Аминокислоты</option>
+                        <option value="vitamins">Витамины</option>
+                        <option value="gainers">Гейнеры</option>
+                        <option value="creatine">Креатин</option>
+                    </select>
+                    
+                    <select id="priceFilter" class="px-4 py-2 border border-gray-300 rounded-md bg-white">
+                        <option value="all">Любая цена</option>
+                        <option value="0-1000">До 1000 ₽</option>
+                        <option value="1000-3000">1000-3000 ₽</option>
+                        <option value="3000-5000">3000-5000 ₽</option>
+                        <option value="5000+">От 5000 ₽</option>
+                    </select>
+                    
+                    <select id="brandFilter" class="px-4 py-2 border border-gray-300 rounded-md bg-white">
+                        <option value="all">Все бренды</option>
+                        <option value="optimum">Optimum Nutrition</option>
+                        <option value="dymatize">Dymatize</option>
+                        <option value="bsn">BSN</option>
+                        <option value="muscletech">MuscleTech</option>
+                    </select>
+                    
+                    <button id="resetFilters" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition">Сбросить</button>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Полезные статьи</h2>
+            
+            <div class="flex border-b border-gray-200 mb-6">
+                <button class="tab-button px-4 py-2 font-medium text-gray-700 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition active" data-tab="nutrition">Питание</button>
+                <button class="tab-button px-4 py-2 font-medium text-gray-700 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition" data-tab="training">Тренировки</button>
+                <button class="tab-button px-4 py-2 font-medium text-gray-700 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition" data-tab="supplements">Добавки</button>
+            </div>
+            
+            <div class="tab-content active" id="nutrition-tab">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://sun9-40.userapi.com/impg/emP5vAsiDGLtwVjAr-T6Gfyr3FBAkkwn_Iir3A/hNUOSjb31sE.jpg?size=1176x776&quality=96&sign=00177fa7ca10ae103ff9767f6624bad4&c_uniq_tag=YYs-dbLby7r3dAAJUhbqa-nRvcakdi7Imc5MTtLJ5NY&type=album" alt="Как выбрать протеин" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Как выбрать протеин</h3>
+                            <p class="text-gray-600 mb-4">Полное руководство по выбору оптимального протеина для ваших целей и типа тренировок.</p>
+                            <a href="file:Статья как выбрать протеин.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://athleticbody.ru/wp-content/uploads/2017/12/chto-est-dlya-rosta-mishc.jpg" alt="Питание до и после тренировки" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Питание до и после тренировки</h3>
+                            <p class="text-gray-600 mb-4">Что есть перед тренировкой для энергии и после для восстановления - научный подход.</p>
+                            <a href="file:Статья о питании.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6565a6ae1579133d0f5c90e6_6565ab050f1c42402786e371/scale_1200" alt="Гид по BCAA" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Гид по BCAA: что это и зачем нужно</h3>
+                            <p class="text-gray-600 mb-4">Разбираемся в аминокислотах с разветвленной цепью и их роли в спортивном питании.</p>
+                            <a href="file:Статья о BCAA.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="training-tab">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://menandstyle.ru/upload/iblock/5a1/8sm7lsjynxfaltcnr7z3211yu2lwu82v/shutterstock_5248099.jpg" alt="Программа для набора мышечной массы" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Программа для набора мышечной массы</h3>
+                            <p class="text-gray-600 mb-4">Эффективные тренировочные схемы для максимального роста мышц.</p>
+                            <a href="file:Статья о наборе мышечной массы.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://img.freepik.com/premium-photo/people-are-exercising-with-cardio-spinning-class-by-exercise-machine-gym_35150-2825.jpg" alt="Кардио для похудения" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Кардио для похудения: мифы и правда</h3>
+                            <p class="text-gray-600 mb-4">Как правильно делать кардио, чтобы сжигать жир, а не мышцы.</p>
+                            <a href="file:Статья о кардио.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://avatars.mds.yandex.net/i?id=788dc9e5483d1c39aee7f522e8f39d90_l-4809764-images-thumbs&n=13" alt="Восстановление после тренировки" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Восстановление после тренировки</h3>
+                            <p class="text-gray-600 mb-4">Методы ускорения восстановления для более эффективных тренировок.</p>
+                            <a href="file:Статья о восстановлении.html#" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="supplements-tab">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://i.ytimg.com/vi/z51_a1EJvL8/maxresdefault.jpg" alt="Креатин в спортивном питании" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Креатин в спортивном питании</h3>
+                            <p class="text-gray-600 mb-4">Как правильно принимать креатин для увеличения силы и выносливости.</p>
+                            <a href="file:Статья о креатине.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://img.voxmarkets.co.uk/1920/cms/73e99539-5aec-4ce5-b1b5-61d7478653ff.jpeg" alt="Гейнеры или протеин" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Гейнеры или протеин: что выбрать?</h3>
+                            <p class="text-gray-600 mb-4">Сравниваем два популярных продукта и помогаем сделать правильный выбор.</p>
+                            <a href="file:Статья о гейнере.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://avatars.mds.yandex.net/get-altay/2368846/2a0000017194a4f4efb5ec568cf155e9be86/XXL_height" alt="Витамины для спортсменов" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Витамины для спортсменов: какие нужны</h3>
+                            <p class="text-gray-600 mb-4">Обзор самых важных витаминов и минералов для тех, кто активно тренируется.</p>
+                            <a href="file:Статья о витаминах.html" class="text-blue-600 font-medium hover:underline">Читать далее</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BJU Calculator Section -->
+    <section id="bju-calculator" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Калькулятор БЖУ</h2>
+            
+            <div class="max-w-2xl mx-auto bg-gray-100 p-6 rounded-lg">
+                <form id="bjuForm" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="gender" class="block text-gray-700 mb-1">Пол</label>
+                            <select id="gender" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white">
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="age" class="block text-gray-700 mb-1">Возраст (лет)</label>
+                            <input type="number" id="age" min="15" max="80" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="weight" class="block text-gray-700 mb-1">Вес (кг)</label>
+                            <input type="number" id="weight" min="40" max="150" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        </div>
+                        
+                        <div>
+                            <label for="height" class="block text-gray-700 mb-1">Рост (см)</label>
+                            <input type="number" id="height" min="140" max="220" class="w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="activity" class="block text-gray-700 mb-1">Уровень активности</label>
+                        <select id="activity" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white">
+                            <option value="1.2">Минимальная активность (сидячий образ жизни)</option>
+                            <option value="1.375">Низкая активность (легкие тренировки 1-3 раза в неделю)</option>
+                            <option value="1.55" selected>Умеренная активность (тренировки 3-5 раз в неделю)</option>
+                            <option value="1.725">Высокая активность (интенсивные тренировки 6-7 раз в неделю)</option>
+                            <option value="1.9">Экстремальная активность (тяжелые тренировки 2 раза в день)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="goal" class="block text-gray-700 mb-1">Цель</label>
+                        <select id="goal" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white">
+                            <option value="loss">Похудение</option>
+                            <option value="maintenance" selected>Поддержание веса</option>
+                            <option value="gain">Набор массы</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">Рассчитать</button>
+                </form>
+                
+                <div id="bjuResult" class="mt-6 hidden">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Ваша норма БЖУ</h3>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="grid grid-cols-3 gap-4 text-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="text-sm text-gray-600">Калории</p>
+                                <p id="calories" class="text-xl font-bold text-blue-600">0</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded">
+                                <p class="text-sm text-gray-600">Белки</p>
+                                <p id="protein" class="text-xl font-bold text-green-600">0 г</p>
+                            </div>
+                            <div class="bg-yellow-100 p-3 rounded">
+                                <p class="text-sm text-gray-600">Жиры</p>
+                                <p id="fat" class="text-xl font-bold text-yellow-600">0 г</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-purple-100 p-3 rounded inline-block">
+                                <p class="text-sm text-gray-600">Углеводы</p>
+                                <p id="carbs" class="text-xl font-bold text-purple-600">0 г</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Рекомендации:</p>
+                            <ul id="recommendations" class="list-disc pl-5 mt-2 space-y-1">
+                                <!-- Recommendations will be added here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">О компании Reckful</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6 mb-6">
+                        <img src="https://ltdfoto.ru/images/2025/05/16/Untitled_logo_1_free-file.jpg" alt="Магазин Reckful" class="w-full md:w-1/2 h-auto rounded-lg object-cover">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Наша миссия</h3>
+                            <p class="text-gray-600">Мы помогаем спортсменам и любителям фитнеса достигать своих целей, предоставляя только качественное спортивное питание от проверенных мировых производителей.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-600 text-2xl mb-2">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2 text-gray-800">Качество</h4>
+                            <p class="text-gray-600 text-sm">Все товары проходят строгий контроль качества перед поступлением в продажу.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <div class="text-green-600 text-2xl mb-2">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2 text-gray-800">Быстрая доставка</h4>
+                            <p class="text-gray-600 text-sm">Доставляем заказы по всей России в кратчайшие сроки.</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <div class="text-purple-600 text-2xl mb-2">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2 text-gray-800">Поддержка</h4>
+                            <p class="text-gray-600 text-sm">Наши консультанты помогут подобрать оптимальные продукты для ваших целей.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Reckful</h3>
+                    <p class="text-gray-400">Магазин спортивного питания для профессионалов и любителей.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Москва, ул. Спортивная, 15</li>
+                        <li><i class="fas fa-phone mr-2"></i> +7 (999) 123-45-67</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@reckful.ru</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Часы работы</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Пн-Пт: 9:00 - 21:00</li>
+                        <li>Сб-Вс: 10:00 - 20:00</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Соцсети</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://vk.com/reckful" class="text-gray-400 hover:text-white transition"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="https://t.me/reckful_shop" class="text-gray-400 hover:text-white transition"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="https://www.youtube.com/redirect?event=channel_description&redir_token=QUFFLUhqazRIeUZGcFRoVDNjY2dVOWx5SVNZdHlibms3QXxBQ3Jtc0trYzQ1WFUzNG5oZkVfeFNUZ0lncEJ2OWJTVm5FQlVrVHlmam9DeVBCbmtPRHhiN0lsdWN1R1JsN2FTZVFzNGhFTDUzcFlTcUZiSk9CVzFSX1hyb2Fuc0ZHNUs4TVlOdFliVFBPOU1SQzRFamFzTkRrMA&q=https%3A%2F%2Fwww.instagram.com%2Freckful.ru%3Figsh%3DMTdyaXZyYmI4MjM0MQ%3D%3D" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="http://www.youtube.com/@ReckfulChannel" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Reckful. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Products Data
+        const products = [
+            {
+                id: 1,
+                name: "Optimum Nutrition Gold Standard 100% Whey",
+                price: 3999,
+                category: "protein",
+                brand: "optimum",
+                image: "https://resources.claroshop.com/medios-plazavip/t1/1711049398WHEYGOLDSTANDARDVAINILLA001jpg",
+                description: "Сывороточный протеин премиум-класса с 24 г белка на порцию."
+            },
+            {
+                id: 2,
+                name: "Dymatize ISO 100 Hydrolyzed",
+                price: 4599,
+                category: "protein",
+                brand: "dymatize",
+                image: "https://images.onlymyhealth.com/only-my-health-english/images/2024/11/21/template/image/inside-2-1732175150468.jpg",
+                description: "Гидролизованный изолят сывороточного белка с быстрым усвоением."
+            },
+            {
+                id: 3,
+                name: "BSN Syntha-6",
+                price: 3499,
+                category: "protein",
+                brand: "bsn",
+                image: "https://test.willpower.su/image/cache/catalog/brands/bsn/syntha61320gr2-1200x800.jpeg",
+                description: "Многокомпонентный протеин с 6 разными источниками белка."
+            },
+            {
+                id: 4,
+                name: "MuscleTech NitroTech Pure",
+                price: 3799,
+                category: "protein",
+                brand: "muscletech",
+                image: "https://fitnessinformant.com/wp-content/uploads/2021/06/nitrotechfeat.jpg",
+                description: "Изолят сывороточного протеина с добавлением креатина."
+            },
+            {
+                id: 5,
+                name: "Optimum Nutrition BCAA 1000 Caps",
+                price: 1499,
+                category: "amino",
+                brand: "optimum",
+                image: "https://dobrynya.su/image/cache/catalog/scr/bcaa1000-200caps-1200x800.jpg",
+                description: "Аминокислоты BCAA в удобных капсулах для восстановления мышц."
+            },
+            {
+                id: 6,
+                name: "Dymatize BCAA Complex 5050",
+                price: 1999,
+                category: "amino",
+                brand: "dymatize",
+                image: "https://belok.shop/image/cache/catalog/products/bcaa/bcaa52-1200x630.jpg",
+                description: "Оптимальное соотношение BCAA 2:1:1 для поддержки мышц."
+            },
+            {
+                id: 7,
+                name: "Optimum Nutrition Opti-Men",
+                price: 1799,
+                category: "vitamins",
+                brand: "optimum",
+                image: "https://musclemax.gr/image/cache/catalog/op90%201000x1000-600x315.jpg",
+                description: "Комплекс витаминов и минералов специально для мужчин."
+            },
+            {
+                id: 8,
+                name: "MuscleTech Mass-Tech Extreme 2000",
+                price: 4999,
+                category: "gainers",
+                brand: "muscletech",
+                image: "https://img.rl0.ru/afisha/e-x750i/daily.afisha.ru/uploads/images/7/d7/7d7c91c95bebf0774c0d2b4d2f5cf167.jpg",
+                description: "Высококалорийный гейнер для быстрого набора массы."
+            },
+            {
+                id: 9,
+                name: "BSN True-Mass",
+                price: 4299,
+                category: "gainers",
+                brand: "bsn",
+                image: "https://www.gym-nutrition.ru/image/cache/catalog/Product_pict/bsn_true_mass1200-1200x800.jpg",
+                description: "Сбалансированный гейнер с белками, углеводами и жирами."
+            },
+            {
+                id: 10,
+                name: "Optimum Nutrition Micronized Creatine",
+                price: 1299,
+                category: "creatine",
+                brand: "optimum",
+                image: "https://avatars.mds.yandex.net/i?id=ea70651399382ac066d8dd316c552db7_l-5233330-images-thumbs&n=13",
+                description: "100% чистый микронизированный креатин моногидрат."
+            },
+            {
+                id: 11,
+                name: "MuscleTech Platinum Creatine",
+                price: 1599,
+                category: "creatine",
+                brand: "muscletech",
+                image: "https://www.the-nutrition.com/store/images/products/967_cat_12345.jpg",
+                description: "Креатин моногидрат высочайшей степени очистки."
+            },
+            {
+                id: 12,
+                name: "Optimum Nutrition Fish Oil",
+                price: 899,
+                category: "vitamins",
+                brand: "optimum",
+                image: "https://pcdn.goldapple.ru/p/p/19000033941/web/696d674d61696e5f31306638643661353635633834363937383633656530666333303730393464628dcc1ab35dbf25c.jpg",
+                description: "Омега-3 жирные кислоты для поддержки сердца и суставов."
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        
+        // Load products on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(products);
+            setupEventListeners();
+        });
+        
+        // Render products to the page
+        function renderProducts(productsToRender) {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1 text-gray-800">${product.name}</h3>
+                        <p class="text-gray-600 text-sm mb-3">${product.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">${product.price} ₽</span>
+                            <button class="add-to-cart bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" data-id="${product.id}">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            document.getElementById('mobileMenuButton').addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.toggle('hidden');
+            });
+            
+            // Cart toggle
+            document.getElementById('cartButton').addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.getElementById('cartDropdown').classList.toggle('hidden');
+            });
+            
+            // Close cart when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#cartButton') && !e.target.closest('#cartDropdown')) {
+                    document.getElementById('cartDropdown').classList.add('hidden');
+                }
+            });
+            
+            // Add to cart buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    addToCart(productId);
+                }
+                
+                // Remove from cart buttons
+                if (e.target.classList.contains('remove-from-cart')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    removeFromCart(productId);
+                }
+                
+                // Increase quantity buttons
+                if (e.target.classList.contains('increase-quantity')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    changeQuantity(productId, 1);
+                }
+                
+                // Decrease quantity buttons
+                if (e.target.classList.contains('decrease-quantity')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    changeQuantity(productId, -1);
+                }
+            });
+            
+            // Checkout button
+            document.getElementById('checkoutButton').addEventListener('click', function() {
+                alert('Спасибо за заказ! Общая сумма: ' + calculateCartTotal() + ' ₽');
+                cart = [];
+                updateCartUI();
+            });
+            
+            // Filter products
+            document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+            document.getElementById('priceFilter').addEventListener('change', filterProducts);
+            document.getElementById('brandFilter').addEventListener('change', filterProducts);
+            document.getElementById('resetFilters').addEventListener('click', resetFilters);
+            
+            // Tab switching for articles
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab') + '-tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // BJU Calculator form
+            document.getElementById('bjuForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                calculateBJU();
+            });
+        }
+        
+        // Add product to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCartUI();
+            
+            // Show notification
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg';
+            notification.textContent = `${product.name} добавлен в корзину`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        }
+        
+        // Remove product from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+        
+        // Change product quantity in cart
+        function changeQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+        
+        // Update cart UI
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartItemCount = document.getElementById('cartItemCount');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-4">Корзина пуста</p>';
+                cartItemCount.classList.add('hidden');
+            } else {
+                cartItemsContainer.innerHTML = '';
+                
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex justify-between items-center mb-4 pb-4 border-b border-gray-200';
+                    cartItem.innerHTML = `
+                        <div class="flex items-center">
+                            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-3">
+                            <div>
+                                <h4 class="font-medium text-sm text-gray-800">${item.name}</h4>
+                                <p class="text-gray-500 text-sm">${item.price} ₽ × ${item.quantity}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-quantity text-gray-500 hover:text-red-500 mr-2" data-id="${item.id}">
+                                <i class="fas fa-minus text-xs"></i>
+                            </button>
+                            <span class="text-gray-700">${item.quantity}</span>
+                            <button class="increase-quantity text-gray-500 hover:text-green-500 ml-2" data-id="${item.id}">
+                                <i class="fas fa-plus text-xs"></i>
+                            </button>
+                            <button class="remove-from-cart text-red-500 ml-4" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                cartItemCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+                cartItemCount.classList.remove('hidden');
+            }
+            
+            cartTotal.textContent = calculateCartTotal() + ' ₽';
+        }
+        
+        // Calculate cart total
+        function calculateCartTotal() {
+            return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        }
+        
+        // Filter products based on selected filters
+        function filterProducts() {
+            const category = document.getElementById('categoryFilter').value;
+            const price = document.getElementById('priceFilter').value;
+            const brand = document.getElementById('brandFilter').value;
+            
+            let filteredProducts = [...products];
+            
+            // Filter by category
+            if (category !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.category === category);
+            }
+            
+            // Filter by price
+            if (price !== 'all') {
+                const [min, max] = price.split('-').map(Number);
+                
+                if (price.endsWith('+')) {
+                    filteredProducts = filteredProducts.filter(product => product.price >= min);
+                } else {
+                    filteredProducts = filteredProducts.filter(product => product.price >= min && product.price <= max);
+                }
+            }
+            
+            // Filter by brand
+            if (brand !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.brand === brand);
+            }
+            
+            renderProducts(filteredProducts);
+        }
+        
+        // Reset all filters
+        function resetFilters() {
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('priceFilter').value = 'all';
+            document.getElementById('brandFilter').value = 'all';
+            renderProducts(products);
+        }
+        
+        // Calculate BJU (macronutrients)
+        function calculateBJU() {
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+            const goal = document.getElementById('goal').value;
+            
+            // Calculate BMR (Basal Metabolic Rate)
+            let bmr;
+            if (gender === 'male') {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+            
+            // Calculate TDEE (Total Daily Energy Expenditure)
+            let tdee = bmr * activity;
+            
+            // Adjust for goal
+            let calories;
+            if (goal === 'loss') {
+                calories = tdee * 0.85; // 15% deficit
+            } else if (goal === 'gain') {
+                calories = tdee * 1.15; // 15% surplus
+            } else {
+                calories = tdee; // maintenance
+            }
+            
+            // Calculate macronutrients
+            let protein, fat, carbs;
+            
+            protein = weight * 2; // 2g per kg of body weight
+            fat = weight * 1; // 1g per kg of body weight
+            carbs = (calories - (protein * 4 + fat * 9)) / 4; // remaining calories as carbs
+            
+            // Round values
+            calories = Math.round(calories);
+            protein = Math.round(protein);
+            fat = Math.round(fat);
+            carbs = Math.round(carbs);
+            
+            // Display results
+            document.getElementById('calories').textContent = calories;
+            document.getElementById('protein').textContent = protein + ' г';
+            document.getElementById('fat').textContent = fat + ' г';
+            document.getElementById('carbs').textContent = carbs + ' г';
+            
+            // Add recommendations
+            const recommendations = document.getElementById('recommendations');
+            recommendations.innerHTML = '';
+            
+            const recList = [
+                `Белки: ${protein} г (${Math.round(protein * 4 / calories * 100)}% от калорий)`,
+                `Жиры: ${fat} г (${Math.round(fat * 9 / calories * 100)}% от калорий)`,
+                `Углеводы: ${carbs} г (${Math.round(carbs * 4 / calories * 100)}% от калорий)`
+            ];
+            
+            if (goal === 'loss') {
+                recList.push("Для похудения рекомендуется небольшой дефицит калорий (15-20%)");
+                recList.push("Увеличьте количество белка до 2.2-2.5 г на кг веса для сохранения мышц");
+            } else if (goal === 'gain') {
+                recList.push("Для набора массы рекомендуется профицит калорий (10-15%)");
+                recList.push("Увеличьте количество углеводов для обеспечения энергией тренировок");
+            } else {
+                recList.push("Для поддержания веса придерживайтесь рассчитанной нормы калорий");
+            }
+            
+            recList.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recommendations.appendChild(li);
+            });
+            
+            // Show results
+            document.getElementById('bjuResult').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гид по BCAA: что это и зачем нужно</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bcaa-gradient {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 30px;
+            height: calc(100% - 30px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bcaa-gradient text-white py-12 px-4 md:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Гид по BCAA</h1>
+                    <p class="text-xl mb-6">Разбираемся в аминокислотах с разветвлённой цепью и их роли в спортивном питании</p>
+                    <button onclick="scrollToSection('what-is')" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        Узнать больше <i class="fas fa-arrow-down ml-2"></i>
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f5b565f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="BCAA добавки" 
+                         class="rounded-xl shadow-2xl w-full max-w-md border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-10">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex overflow-x-auto py-4 px-4 hide-scrollbar">
+                <button onclick="showTab('what-is')" class="tab-btn flex-shrink-0 px-4 py-2 mx-1 rounded-full bg-blue-100 text-blue-600 font-medium">Что такое BCAA?</button>
+                <button onclick="showTab('benefits')" class="tab-btn flex-shrink-0 px-4 py-2 mx-1 rounded-full hover:bg-gray-100">Преимущества</button>
+                <button onclick="showTab('how-to-use')" class="tab-btn flex-shrink-0 px-4 py-2 mx-1 rounded-full hover:bg-gray-100">Как принимать</button>
+                <button onclick="showTab('sources')" class="tab-btn flex-shrink-0 px-4 py-2 mx-1 rounded-full hover:bg-gray-100">Источники</button>
+                <button onclick="showTab('faq')" class="tab-btn flex-shrink-0 px-4 py-2 mx-1 rounded-full hover:bg-gray-100">Вопросы</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-6xl py-8 px-4">
+        <!-- What is BCAA -->
+        <section id="what-is" class="tab-content active py-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Что такое BCAA?</h2>
+                        <p class="text-gray-600 mb-4">BCAA (Branched-Chain Amino Acids) — это три незаменимые аминокислоты с разветвлённой цепью: <span class="font-semibold text-blue-600">лейцин</span>, <span class="font-semibold text-blue-600">изолейцин</span> и <span class="font-semibold text-blue-600">валин</span>.</p>
+                        <p class="text-gray-600 mb-6">Эти аминокислоты составляют около 35% мышечного белка и не синтезируются организмом самостоятельно, поэтому должны поступать с пищей или добавками.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-dna text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Уникальная структура</h3>
+                                <p class="text-gray-600 text-sm">Разветвлённая боковая цепь отличает BCAA от других аминокислот</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-bolt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Быстрое усвоение</h3>
+                                <p class="text-gray-600 text-sm">BCAA метаболизируются непосредственно в мышцах, а не в печени</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                        <div class="relative w-full max-w-md">
+                            <div class="absolute -top-6 -left-6 bg-yellow-100 w-24 h-24 rounded-full z-0"></div>
+                            <div class="absolute -bottom-6 -right-6 bg-blue-100 w-24 h-24 rounded-full z-0"></div>
+                            <div class="relative z-10 bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-center mb-6">Состав BCAA</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                        <div class="bg-blue-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Лейцин (2:1:1)</h4>
+                                            <p class="text-sm text-gray-600">Стимулирует синтез белка, активирует mTOR</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                        <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Изолейцин</h4>
+                                            <p class="text-sm text-gray-600">Регулирует уровень глюкозы, участвует в энергообмене</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                        <div class="bg-purple-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Валин</h4>
+                                            <p class="text-sm text-gray-600">Поддерживает азотистый баланс, предотвращает катаболизм</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Как работают BCAA?</h2>
+                        <p class="text-gray-600 mb-6">BCAA играют ключевую роль в анаболических процессах и энергетическом обмене во время физических нагрузок.</p>
+                        
+                        <div class="relative">
+                            <div class="timeline-item relative pl-16 pb-8">
+                                <div class="absolute left-0 top-0 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-dumbbell text-xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-lg mb-1">Во время тренировки</h3>
+                                <p class="text-gray-600">BCAA используются как источник энергии, снижая распад мышечного белка</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-16 pb-8">
+                                <div class="absolute left-0 top-0 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-heartbeat text-xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-lg mb-1">После тренировки</h3>
+                                <p class="text-gray-600">Стимулируют синтез мышечного белка и ускоряют восстановление</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-16">
+                                <div class="absolute left-0 top-0 bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-moon text-xl"></i>
+                                </div>
+                                <h3 class="font-semibold text-lg mb-1">Во время отдыха</h3>
+                                <p class="text-gray-600">Подавляют катаболические процессы, особенно в период дефицита калорий</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c955bdcf23d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Механизм действия BCAA" 
+                             class="rounded-xl shadow-md w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section id="benefits" class="tab-content py-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Преимущества BCAA</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-muscle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Рост мышц</h3>
+                    <p class="text-gray-600">Лейцин активирует mTOR-путь, стимулируя синтез мышечного белка и способствуя гипертрофии.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-battery-three-quarters text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Снижение усталости</h3>
+                    <p class="text-gray-600">BCAA конкурируют с триптофаном, уменьшая образование серотонина и отсрочивая наступление усталости.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-purple-100 text-purple-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Сжигание жира</h3>
+                    <p class="text-gray-600">Приём BCAA на диете помогает сохранить мышечную массу и увеличить процент жиросжигания.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-yellow-100 text-yellow-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Восстановление</h3>
+                    <p class="text-gray-600">Уменьшают повреждение мышц после тренировки и ускоряют процессы восстановления.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-red-100 text-red-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Защита от катаболизма</h3>
+                    <p class="text-gray-600">Особенно важны при тренировках натощак или в условиях дефицита калорий.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="bg-indigo-100 text-indigo-600 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Когнитивные функции</h3>
+                    <p class="text-gray-600">Улучшают умственную работоспособность при длительных нагрузках.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Научные исследования</h2>
+                        <p class="text-gray-600 mb-6">Эффективность BCAA подтверждена многочисленными исследованиями в области спортивной медицины и нутрициологии.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white p-2 rounded-lg mr-4">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Исследование 2017 года</h4>
+                                    <p class="text-sm text-gray-600">Приём BCAA увеличивал синтез мышечного белка на 22% по сравнению с плацебо.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-600 text-white p-2 rounded-lg mr-4">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Мета-анализ 2019 года</h4>
+                                    <p class="text-sm text-gray-600">BCAA снижали мышечную болезненность после тренировки на 33%.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-purple-600 text-white p-2 rounded-lg mr-4">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Исследование 2020 года</h4>
+                                    <p class="text-sm text-gray-600">Спортсмены, принимавшие BCAA, показали на 15% лучшие результаты в выносливости.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                        <div class="bg-white p-6 rounded-xl shadow-inner w-full max-w-md">
+                            <h3 class="text-xl font-semibold mb-4 text-center">Кому особенно полезны BCAA?</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>Спортсменам силовых видов спорта</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>Тем, кто тренируется натощак</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>При дефиците калорий (сушка, похудение)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>Вегетарианцам и веганам</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>При высокоинтенсивных тренировках</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-check text-blue-600"></i>
+                                    </div>
+                                    <span>Спортсменам старшего возраста</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to use -->
+        <section id="how-to-use" class="tab-content py-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Как правильно принимать BCAA</h2>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Оптимальные дозировки</h3>
+                        <p class="text-gray-600 mb-6">Стандартная доза BCAA составляет 5-10 грамм за прием. Наиболее распространены пропорции:</p>
+                        
+                        <div class="grid gap-4 mb-6">
+                            <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="bg-blue-600 text-white px-3 py-1 rounded-full mr-4 font-bold">2:1:1</div>
+                                <div>
+                                    <h4 class="font-semibold">Стандартная формула</h4>
+                                    <p class="text-sm text-gray-600">5г лейцина, 2.5г изолейцина, 2.5г валина</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                <div class="bg-green-600 text-white px-3 py-1 rounded-full mr-4 font-bold">4:1:1</div>
+                                <div>
+                                    <h4 class="font-semibold">Для набора массы</h4>
+                                    <p class="text-sm text-gray-600">Акцент на лейцин для максимальной стимуляции синтеза белка</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                                <div class="bg-purple-600 text-white px-3 py-1 rounded-full mr-4 font-bold">8:1:1</div>
+                                <div>
+                                    <h4 class="font-semibold">Для профессионалов</h4>
+                                    <p class="text-sm text-gray-600">При интенсивных нагрузках и большом тренировочном стаже</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 text-sm">* Дозировка может варьироваться в зависимости от массы тела и интенсивности тренировок</p>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                        <div class="relative w-full max-w-md">
+                            <div class="bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-center mb-6">Рекомендуемый график приёма</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                        <div class="bg-blue-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">Утром</h4>
+                                            <p class="text-sm text-gray-600">5г BCAA для предотвращения катаболизма после ночного голодания</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                        <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">До/во время тренировки</h4>
+                                            <p class="text-sm text-gray-600">5-10г BCAA для энергии и защиты мышц</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-purple-50 rounded-lg">
+                                        <div class="bg-purple-600 text-white p-2 rounded-full mr-4">
+                                            <i class="fas fa-moon"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold">После тренировки</h4>
+                                            <p class="text-sm text-gray-600">5г BCAA для запуска процессов восстановления</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Формы выпуска</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-powder"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Порошок</h4>
+                                <p class="text-gray-600 text-sm">Наиболее экономичный вариант. Быстро растворяется в воде. Может иметь горьковатый вкус.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Капсулы/таблетки</h4>
+                                <p class="text-gray-600 text-sm">Удобны для приёма, но требуют больше времени на усвоение. Нет вкуса.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Жидкая форма</h4>
+                                <p class="text-gray-600 text-sm">Готовый к употреблению продукт. Быстро усваивается. Часто содержит дополнительные ингредиенты.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Советы по приёму</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600">Принимайте BCAA с витамином B6 для лучшего усвоения</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600">Во время тренировки разводите порошок в 500-700 мл воды</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600">Не превышайте дозировку 20-30г в сутки</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600">Принимайте BCAA отдельно от других аминокислот</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600">В дни отдыха принимайте утром и между приёмами пищи</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-xl p-6 mb-8">
+                <div class="flex items-start">
+                    <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                        <i class="fas fa-exclamation-triangle text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Противопоказания и побочные эффекты</h3>
+                        <p class="text-gray-600 mb-2">BCAA считаются безопасной добавкой, но в некоторых случаях могут вызывать:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Тошноту при приёме на пустой желудок</li>
+                            <li>Головную боль при превышении дозировки</li>
+                            <li>Аллергические реакции (редко)</li>
+                        </ul>
+                        <p class="text-gray-600 mt-3">Противопоказаны при:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Болезнях почек и печени</li>
+                            <li>Беременности и кормлении грудью</li>
+                            <li>Индивидуальной непереносимости</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section id="sources" class="tab-content py-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Источники BCAA</h2>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Продукты питания</h3>
+                        <p class="text-gray-600 mb-6">BCAA содержатся во всех белковых продуктах, но особенно богаты ими:</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <div class="bg-red-100 text-red-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-drumstick-bite"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Куриная грудка</h4>
+                                    <p class="text-sm text-gray-600">6.8г BCAA на 100г продукта</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-fish"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Лосось</h4>
+                                    <p class="text-sm text-gray-600">4.9г BCAA на 100г продукта</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <div class="bg-yellow-100 text-yellow-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-egg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Яйца</h4>
+                                    <p class="text-sm text-gray-600">3.3г BCAA на 2 крупных яйца</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <div class="bg-green-100 text-green-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Чечевица</h4>
+                                    <p class="text-sm text-gray-600">3.1г BCAA на 100г продукта</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <div class="bg-purple-100 text-purple-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-cheese"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Творог</h4>
+                                    <p class="text-sm text-gray-600">6.2г BCAA на 200г продукта</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                        <div class="relative w-full max-w-md">
+                            <div class="bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-center mb-6">Сравнение источников</h3>
+                                <div class="h-64">
+                                    <canvas id="bcaaChart"></canvas>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 mt-4">* Содержание BCAA в граммах на 100г продукта</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Как выбрать BCAA добавку?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Соотношение аминокислот</h4>
+                                <p class="text-gray-600 text-sm">Оптимально начинать с классического соотношения 2:1:1</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Форма выпуска</h4>
+                                <p class="text-gray-600 text-sm">Порошок экономичнее, капсулы удобнее</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Дополнительные ингредиенты</h4>
+                                <p class="text-gray-600 text-sm">Витамин B6, электролиты, глютамин могут быть полезны</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Растворимость</h4>
+                                <p class="text-gray-600 text-sm">Хорошие BCAA должны полностью растворяться в воде</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Производитель</h4>
+                                <p class="text-gray-600 text-sm">Выбирайте проверенные бренды с хорошей репутацией</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Рейтинг лучших BCAA 2023</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="bg-yellow-500 text-white px-3 py-1 rounded-full mr-4 font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold">Optimum Nutrition BCAA 1000</h4>
+                                <p class="text-sm text-gray-600">Лучшее соотношение цена/качество</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="bg-gray-400 text-white px-3 py-1 rounded-full mr-4 font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold">Scivation Xtend</h4>
+                                <p class="text-sm text-gray-600">Лучший вкус и дополнительные ингредиенты</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="bg-amber-700 text-white px-3 py-1 rounded-full mr-4 font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold">BPI Sports Best BCAA</h4>
+                                <p class="text-sm text-gray-600">Лучшая растворимость</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="bg-gray-600 text-white px-3 py-1 rounded-full mr-4 font-bold">4</div>
+                            <div>
+                                <h4 class="font-semibold">MuscleTech Essential Series</h4>
+                                <p class="text-sm text-gray-600">Лучший бюджетный вариант</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <div class="bg-gray-600 text-white px-3 py-1 rounded-full mr-4 font-bold">5</div>
+                            <div>
+                                <h4 class="font-semibold">MyProtein BCAA</h4>
+                                <p class="text-sm text-gray-600">Лучший выбор по объёму</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="tab-content py-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Частые вопросы о BCAA</h2>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                <div class="divide-y divide-gray-200">
+                    <div class="faq-item p-6">
+                        <button onclick="toggleFAQ(this)" class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold">BCAA или протеин — что лучше?</h3>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer mt-4 hidden">
+                            <p class="text-gray-600">BCAA и протеин дополняют друг друга. Протеин содержит полный спектр аминокислот, включая BCAA, но в меньшей концентрации. BCAA быстрее усваиваются и целенаправленно работают на синтез белка и предотвращение катаболизма. Оптимально использовать оба продукта: протеин как основу белкового питания, а BCAA — как дополнительную поддержку во время и после тренировки.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6">
+                        <button onclick="toggleFAQ(this)" class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold">Можно ли принимать BCAA без тренировок?</h3>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer mt-4 hidden">
+                            <p class="text-gray-600">Да, BCAA можно принимать в дни отдыха, особенно если вы на диете с дефицитом калорий. Это поможет сохранить мышечную массу. Однако без физических нагрузок эффективность BCAA будет значительно ниже. В дни без тренировок достаточно принимать 5-10г BCAA утром и между приёмами пищи.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6">
+                        <button onclick="toggleFAQ(this)" class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold">Как долго можно принимать BCAA?</h3>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer mt-4 hidden">
+                            <p class="text-gray-600">BCAA можно принимать постоянно, так как это не фармакологический препарат, а пищевая добавка, содержащая натуральные аминокислоты. Однако рекомендуется делать перерывы 1-2 месяца после 3-4 месяцев приёма, чтобы организм не снижал собственную способность усваивать аминокислоты из пищи.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6">
+                        <button onclick="toggleFAQ(this)" class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold">Можно ли смешивать BCAA с другими добавками?</h3>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer mt-4 hidden">
+                            <p class="text-gray-600">BCAA хорошо сочетаются с большинством спортивных добавок. Их можно смешивать с креатином, бета-аланином, цитруллином, электролитами. Не рекомендуется смешивать с протеином, так как это замедлит усвоение BCAA. Лучше принимать BCAA за 20-30 минут до или после протеина.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item p-6">
+                        <button onclick="toggleFAQ(this)" class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-xl font-semibold">Правда ли, что BCAA помогают похудеть?</h3>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer mt-4 hidden">
+                            <p class="text-gray-600">BCAA не являются жиросжигателем, но могут помочь в процессе похудения. Они сохраняют мышечную массу на диете, что поддерживает высокий уровень метаболизма. Также BCAA снижают чувство голода и усталости при дефиците калорий. Однако без правильного питания и тренировок BCAA не приведут к значительной потере жира.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-xl p-6">
+                <div class="flex items-start">
+                    <div class="bg-blue-600 text-white p-3 rounded-full mr-4">
+                        <i class="fas fa-question-circle text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Остались вопросы?</h3>
+                        <p class="text-gray-600 mb-4">Задайте их нашему эксперту по спортивному питанию</p>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Ваше имя" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <textarea placeholder="Ваш вопрос" rows="3" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Отправить вопрос</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">О проекте</h3>
+                    <p class="text-gray-400">Наш гид по BCAA создан на основе научных исследований и практического опыта спортсменов. Мы стремимся предоставить достоверную информацию о спортивном питании.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Полезные ссылки</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Исследования BCAA</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Калькулятор потребности в BCAA</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Отзывы о добавках</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Блог о спортивном питании</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Контакты</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">info@bcaa-guide.ru</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">+7 (123) 456-78-90</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+                <p>© 2023 Гид по BCAA. Все права защищены. Информация предоставлена в ознакомительных целях.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating action button -->
+    <div class="fixed bottom-6 right-6">
+        <button onclick="scrollToTop()" class="floating-btn bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-arrow-up text-xl"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Tab navigation
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.textContent.includes(tabId.replace('-', ' '))) {
+                    btn.classList.add('bg-blue-100', 'text-blue-600');
+                    btn.classList.remove('hover:bg-gray-100');
+                } else {
+                    btn.classList.remove('bg-blue-100', 'text-blue-600');
+                    btn.classList.add('hover:bg-gray-100');
+                }
+            });
+            
+            // Scroll to top of the section
+            document.getElementById(tabId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Initialize chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('bcaaChart').getContext('2d');
+            const bcaaChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Куриная грудка', 'Лосось', 'Говядина', 'Яйца', 'Творог', 'Чечевица'],
+                    datasets: [{
+                        label: 'Содержание BCAA (г/100г)',
+                        data: [6.8, 4.9, 5.2, 1.3, 3.1, 3.1],
+                        backgroundColor: [
+                            'rgba(239, 68, 68, 0.7)',
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(220, 38, 38, 0.7)',
+                            'rgba(234, 179, 8, 0.7)',
+                            'rgba(167, 139, 250, 0.7)',
+                            'rgba(34, 197, 94, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(220, 38, 38, 1)',
+                            'rgba(234, 179, 8, 1)',
+                            'rgba(167, 139, 250, 1)',
+                            'rgba(34, 197, 94, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
