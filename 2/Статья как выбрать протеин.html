@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как выбрать протеин: Полное руководство</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+        }
+        .protein-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .protein-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .faq-item {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+        .protein-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 16px;
+            text-align: left;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Как выбрать протеин: Полное руководство</h1>
+                <p class="text-xl opacity-90 mb-8">Научный подход к выбору оптимального протеина для ваших целей и типа тренировок</p>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 inline-block pulse-animation">
+                    <p class="font-medium"><i class="fas fa-flask mr-2"></i> Основано на последних исследованиях спортивного питания</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <!-- Introduction -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block mr-6">
+                        <div class="bg-indigo-100 text-indigo-800 text-2xl p-4 rounded-xl">
+                            <i class="fas fa-question"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Почему важно правильно выбрать протеин?</h2>
+                        <p class="text-gray-700 mb-4">Современный рынок спортивного питания предлагает десятки видов протеина, и выбор оптимального варианта может быть сложной задачей. Разные типы протеина отличаются по скорости усвоения, аминокислотному профилю, содержанию лактозы и дополнительных ингредиентов.</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="font-medium text-indigo-800"><i class="fas fa-bolt mr-2"></i> До 30% разницы в эффективности</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="font-medium text-purple-800"><i class="fas fa-allergies mr-2"></i> Индивидуальная переносимость</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-medium text-blue-800"><i class="fas fa-ruble-sign mr-2"></i> Экономия до 50% бюджета</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Protein Types -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Основные виды протеина</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Whey Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-blue-500">
+                        <div class="protein-icon bg-blue-100 text-blue-800 mb-4">
+                            <i class="fas fa-cheese text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Сывороточный (Whey)</h3>
+                        <p class="text-gray-700 text-sm mb-4">Быстроусвояемый протеин из молочной сыворотки с полным аминокислотным профилем.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 1-2 часа</span>
+                            <span>Биоценность: 104-159</span>
+                        </div>
+                        <div class="mt-4 bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800"><i class="fas fa-thumbs-up mr-2"></i> Лучший выбор после тренировки</p>
+                        </div>
+                    </div>
+
+                    <!-- Casein Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-purple-500">
+                        <div class="protein-icon bg-purple-100 text-purple-800 mb-4">
+                            <i class="fas fa-moon text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Казеин (Casein)</h3>
+                        <p class="text-gray-700 text-sm mb-4">Медленный молочный протеин, обеспечивающий длительное поступление аминокислот.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 4-6 часов</span>
+                            <span>Биоценность: 77-83</span>
+                        </div>
+                        <div class="mt-4 bg-purple-50 p-3 rounded-lg">
+                            <p class="text-sm text-purple-800"><i class="fas fa-bed mr-2"></i> Идеален перед сном</p>
+                        </div>
+                    </div>
+
+                    <!-- Plant Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-green-500">
+                        <div class="protein-icon bg-green-100 text-green-800 mb-4">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Растительный</h3>
+                        <p class="text-gray-700 text-sm mb-4">Комплексные смеси из гороха, риса, конопли и других растений для вегетарианцев.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 3-4 часа</span>
+                            <span>Биоценность: 60-80</span>
+                        </div>
+                        <div class="mt-4 bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-heart mr-2"></i> Без лактозы и холестерина</p>
+                        </div>
+                    </div>
+
+                    <!-- Egg Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-yellow-500">
+                        <div class="protein-icon bg-yellow-100 text-yellow-800 mb-4">
+                            <i class="fas fa-egg text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Яичный</h3>
+                        <p class="text-gray-700 text-sm mb-4">Высококачественный протеин с эталонным аминокислотным профилем.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 2-3 часа</span>
+                            <span>Биоценность: 100</span>
+                        </div>
+                        <div class="mt-4 bg-yellow-50 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fas fa-award mr-2"></i> Эталон качества</p>
+                        </div>
+                    </div>
+
+                    <!-- Beef Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-red-500">
+                        <div class="protein-icon bg-red-100 text-red-800 mb-4">
+                            <i class="fas fa-drumstick-bite text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Говяжий</h3>
+                        <p class="text-gray-700 text-sm mb-4">Протеин из говядины с высоким содержанием креатина и BCAA.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 2-3 часа</span>
+                            <span>Биоценность: 94</span>
+                        </div>
+                        <div class="mt-4 bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-fire mr-2"></i> Богат креатином</p>
+                        </div>
+                    </div>
+
+                    <!-- Multi Protein -->
+                    <div class="protein-card bg-white rounded-xl p-6 border-l-indigo-500">
+                        <div class="protein-icon bg-indigo-100 text-indigo-800 mb-4">
+                            <i class="fas fa-layer-group text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Мультикомпонентный</h3>
+                        <p class="text-gray-700 text-sm mb-4">Комбинация разных протеинов для комплексного и продолжительного действия.</p>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>Усвоение: 2-5 часов</span>
+                            <span>Биоценность: 90-120</span>
+                        </div>
+                        <div class="mt-4 bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-sm text-indigo-800"><i class="fas fa-star mr-2"></i> Универсальное решение</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Whey Protein Types -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Виды сывороточного протеина</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="comparison-table w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="font-semibold">Тип</th>
+                                <th class="font-semibold">Содержание белка</th>
+                                <th class="font-semibold">Жиры/Углеводы</th>
+                                <th class="font-semibold">Лактоза</th>
+                                <th class="font-semibold">Цена</th>
+                                <th class="font-semibold">Применение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium">Концентрат</td>
+                                <td>70-80%</td>
+                                <td>3-8%</td>
+                                <td>4-8%</td>
+                                <td>$$</td>
+                                <td>Общее применение, бюджетный вариант</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Изолят</td>
+                                <td>85-90%</td>
+                                <td>0.5-3%</td>
+                                <td>0.5-1%</td>
+                                <td>$$$</td>
+                                <td>При непереносимости лактозы, на сушке</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Гидролизат</td>
+                                <td>90-95%</td>
+                                <td>0.5-1%</td>
+                                <td>0.1-0.5%</td>
+                                <td>$$$$</td>
+                                <td>Максимально быстрое усвоение, для профессионалов</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-800 mb-2"><i class="fas fa-check-circle mr-2"></i> Когда выбирать концентрат:</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>При ограниченном бюджете</li>
+                            <li>Если нет проблем с лактозой</li>
+                            <li>Для общего набора массы</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-purple-800 mb-2"><i class="fas fa-star mr-2"></i> Когда выбирать изолят/гидролизат:</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>При непереносимости лактозы</li>
+                            <li>Во время сушки/похудения</li>
+                            <li>Для максимально быстрого усвоения</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Guide -->
+            <section class="mb-16 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Как выбрать протеин под свои цели</h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Goal 1 -->
+                    <div class="protein-card bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-weight-hanging text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Набор мышечной массы</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Оптимальные варианты для максимального роста мышц:</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                                <span class="text-sm"><strong>Сывороточный концентрат</strong> (после тренировки)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-sm"><strong>Казеин</strong> (перед сном)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
+                                <span class="text-sm"><strong>Мультикомпонентный</strong> (между приемами пищи)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-bullseye mr-2"></i> Дозировка: 1.5-2.2 г белка на кг веса в день</p>
+                        </div>
+                    </div>
+
+                    <!-- Goal 2 -->
+                    <div class="protein-card bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-fire text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Похудение/сушка</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Лучшие протеины для сохранения мышц при дефиците калорий:</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                                <span class="text-sm"><strong>Сывороточный изолят</strong> (минимум калорий)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                <span class="text-sm"><strong>Растительный</strong> (для вегетарианцев)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-sm"><strong>Казеин</strong> (для подавления аппетита)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-bullseye mr-2"></i> Дозировка: 2-2.5 г белка на кг веса в день</p>
+                        </div>
+                    </div>
+
+                    <!-- Goal 3 -->
+                    <div class="protein-card bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 text-yellow-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-running text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Поддержание формы</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Сбалансированные варианты для обычных тренировок:</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                                <span class="text-sm"><strong>Сывороточный концентрат</strong> (базовый вариант)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
+                                <span class="text-sm"><strong>Мультикомпонентный</strong> (универсальный)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                <span class="text-sm"><strong>Растительные смеси</strong> (если нет аллергии)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fas fa-bullseye mr-2"></i> Дозировка: 1.2-1.7 г белка на кг веса в день</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Factors -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Дополнительные факторы выбора</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4 text-indigo-800"><i class="fas fa-allergies mr-2"></i> Индивидуальная переносимость</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 text-indigo-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Непереносимость лактозы</h4>
+                                    <p class="text-gray-700 text-sm">Выбирайте изолят/гидролизат сыворотки или растительные протеины. Концентрат может вызывать вздутие и дискомфорт.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-bread-slice"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Чувствительность к глютену</h4>
+                                    <p class="text-gray-700 text-sm">Ищите пометку "Gluten Free". Большинство качественных протеинов не содержат глютен.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-green-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Вегетарианство/веганство</h4>
+                                    <p class="text-gray-700 text-sm">Растительные протеины (гороховый, рисовый, конопляный) или яичный протеин для вегетарианцев.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-lg mb-4 text-purple-800"><i class="fas fa-flask mr-2"></i> Состав и добавки</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-mortar-pestle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Добавки в составе</h4>
+                                    <p class="text-gray-700 text-sm">BCAA, креатин, глютамин могут быть полезны, но увеличивают стоимость. Оцените их необходимость.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-red-100 text-red-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Искусственные добавки</h4>
+                                    <p class="text-gray-700 text-sm">Избегайте протеинов с искусственными подсластителями (аспартам), красителями и консервантами.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mr-3 mt-1">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Содержание белка</h4>
+                                    <p class="text-gray-700 text-sm">Качественный протеин содержит 70-95% белка. Избегайте продуктов с содержанием белка ниже 60%.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Частые вопросы о протеине</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Какой протеин лучше для начинающих?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Для новичков оптимальны:</p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-medium text-blue-800"><i class="fas fa-cheese mr-2"></i> Сывороточный концентрат</p>
+                                        <p class="text-sm mt-1">Лучшее соотношение цена/качество, хорошая усвояемость</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <p class="font-medium text-purple-800"><i class="fas fa-layer-group mr-2"></i> Мультикомпонентный</p>
+                                        <p class="text-sm mt-1">Универсальный вариант с пролонгированным действием</p>
+                                    </div>
+                                </div>
+                                <p><strong>Совет:</strong> Начинайте с небольших порций (20-25 г за прием) и следите за реакцией организма.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Как проверить качество протеина?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Проверка качества протеина:</p>
+                                <ul class="list-disc pl-5 space-y-2 mb-4">
+                                    <li><strong>Растворимость:</strong> Хороший протеин растворяется без комков при размешивании в шейкере</li>
+                                    <li><strong>Пена:</strong> Избыток пены может указывать на наличие дешевых наполнителей</li>
+                                    <li><strong>Вкус:</strong> Натуральный вкус не должен быть слишком химическим или приторным</li>
+                                    <li><strong>Состав:</strong> Белок должен быть первым в списке ингредиентов</li>
+                                </ul>
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="text-green-800"><i class="fas fa-vial mr-2"></i> Домашний тест: Растворите ложку протеина в воде и оставьте на 30 мин. Качественный протеин не оседает полностью.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Когда лучше принимать протеин?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Оптимальное время приема:</p>
+                                <div class="overflow-x-auto">
+                                    <table class="comparison-table w-full mb-4">
+                                        <thead class="bg-gray-100">
+                                            <tr>
+                                                <th class="font-semibold">Время</th>
+                                                <th class="font-semibold">Тип протеина</th>
+                                                <th class="font-semibold">Дозировка</th>
+                                                <th class="font-semibold">Эффект</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-medium">Утро</td>
+                                                <td>Сывороточный</td>
+                                                <td>20-30 г</td>
+                                                <td>Остановка катаболизма</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-medium">После тренировки</td>
+                                                <td>Сывороточный изолят/гидролизат</td>
+                                                <td>25-40 г</td>
+                                                <td>Максимальное восстановление</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-medium">Между приемами пищи</td>
+                                                <td>Мультикомпонентный</td>
+                                                <td>20-30 г</td>
+                                                <td>Поддержание анаболизма</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-medium">Перед сном</td>
+                                                <td>Казеин</td>
+                                                <td>30-40 г</td>
+                                                <td>Антикатаболический эффект</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p><strong>Важно:</strong> Общее количество белка из всех источников должно составлять 1.5-2.5 г на кг веса в день.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Recommendations -->
+            <section class="mb-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Топ-5 рекомендаций по выбору протеина</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Выбирайте по целям</h3>
+                            <p class="text-gray-700">Масса — концентрат, сушка — изолят, поддержание — мультикомпонентный.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Учитывайте переносимость</h3>
+                            <p class="text-gray-700">При непереносимости лактозы — изолят/гидролизат или растительные варианты.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Смотрите состав</h3>
+                            <p class="text-gray-700">Белок должен быть первым в списке ингредиентов, минимум искусственных добавок.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Начинайте с малого</h3>
+                            <p class="text-gray-700">Попробуйте небольшую упаковку перед покупкой большой, проверьте переносимость.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Не экономьте чрезмерно</h3>
+                            <p class="text-gray-700">Качественный протеин не может стоить дешево, но и самые дорогие варианты не всегда лучшие.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-indigo-800 mb-3 text-center"><i class="fas fa-lightbulb mr-2"></i> Итоговый совет</h3>
+                    <p class="text-gray-700 text-center">Лучший протеин — тот, который вы будете принимать регулярно. Выберите тот, который вам нравится по вкусу, хорошо усваивается и соответствует вашим целям и бюджету.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Спортивное питание PRO</h3>
+                        <p class="text-gray-400">Научный подход к вашему прогрессу</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2023 Все права защищены. Информация предоставлена в ознакомительных целях и не заменяет консультацию специалиста.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

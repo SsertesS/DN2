@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Витамины для спортсменов: какие нужны</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+        .vitamin-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .vitamin-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .mineral-card {
+            transition: all 0.3s ease;
+            border-right: 4px solid transparent;
+        }
+        .mineral-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .deficiency-bar {
+            height: 6px;
+            border-radius: 3px;
+        }
+        .faq-item {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Витамины для спортсменов: какие нужны</h1>
+                <p class="text-xl opacity-90 mb-8">Обзор самых важных витаминов и минералов для тех, кто активно тренируется</p>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 inline-block">
+                    <p class="font-medium"><i class="fas fa-dumbbell mr-2"></i> Спортсменам требуется на 30-100% больше витаминов, чем обычным людям</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <!-- Introduction -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <div class="flex items-start">
+                    <div class="hidden md:block mr-6">
+                        <div class="bg-green-100 text-green-800 text-2xl p-4 rounded-xl">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Почему спортсменам нужно больше витаминов?</h2>
+                        <p class="text-gray-700 mb-4">Интенсивные физические нагрузки значительно увеличивают потребность организма в витаминах и минералах. Это связано с ускоренным метаболизмом, повышенным потоотделением, активным синтезом новых клеток и необходимостью быстрого восстановления.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-medium text-blue-800"><i class="fas fa-fire mr-2"></i> При тренировках расход витаминов увеличивается в 2-3 раза</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-medium text-green-800"><i class="fas fa-tint mr-2"></i> С потом теряется до 40% водорастворимых витаминов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Vitamins -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Самые важные витамины для спортсменов</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Vitamin B1 -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-green-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">B1 (Тиамин)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Ключевой витамин для энергетического обмена. Помогает преобразовывать углеводы в энергию.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-utensils mr-1"></i> Источники: орехи, бобовые, свинина, цельные злаки</p>
+                        </div>
+                    </div>
+
+                    <!-- Vitamin B2 -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-blue-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-lungs text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">B2 (Рибофлавин)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Участвует в кислородном обмене и синтезе гемоглобина. Особенно важен для аэробных нагрузок.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800"><i class="fas fa-utensils mr-1"></i> Источники: молочные продукты, яйца, миндаль, грибы</p>
+                        </div>
+                    </div>
+
+                    <!-- Vitamin B6 -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-purple-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 text-purple-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-dna text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">B6 (Пиридоксин)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Необходим для белкового обмена и синтеза аминокислот. Помогает усваивать протеин.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <p class="text-sm text-purple-800"><i class="fas fa-utensils mr-1"></i> Источники: курица, рыба, бананы, картофель</p>
+                        </div>
+                    </div>
+
+                    <!-- Vitamin C -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-red-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-shield-virus text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">C (Аскорбиновая кислота)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Мощный антиоксидант. Укрепляет иммунитет и участвует в синтезе коллагена для суставов.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-utensils mr-1"></i> Источники: цитрусовые, киви, болгарский перец, шиповник</p>
+                        </div>
+                    </div>
+
+                    <!-- Vitamin D -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-yellow-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 text-yellow-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-bone text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">D (Кальциферол)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Регулирует кальциевый обмен, укрепляет кости и мышцы. Повышает выносливость.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fas fa-utensils mr-1"></i> Источники: рыбий жир, яичные желтки, солнечный свет</p>
+                        </div>
+                    </div>
+
+                    <!-- Vitamin E -->
+                    <div class="vitamin-card bg-white rounded-xl p-6 border-l-indigo-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 text-indigo-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-atom text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">E (Токоферол)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Защищает клетки от окислительного стресса после тренировок. Ускоряет восстановление.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-sm text-indigo-800"><i class="fas fa-utensils mr-1"></i> Источники: растительные масла, орехи, авокадо</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Minerals -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Важнейшие минералы для тренировок</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Magnesium -->
+                    <div class="mineral-card bg-white rounded-xl p-6 border-r-green-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-running text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Магний</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Участвует в 300+ биохимических реакциях. Снижает мышечные спазмы, улучшает сон и восстановление.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-utensils mr-1"></i> Источники: орехи, шпинат, бобовые, горький шоколад</p>
+                        </div>
+                    </div>
+
+                    <!-- Zinc -->
+                    <div class="mineral-card bg-white rounded-xl p-6 border-r-blue-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-dumbbell text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Цинк</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Критически важен для синтеза тестостерона и гормона роста. Укрепляет иммунитет.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800"><i class="fas fa-utensils mr-1"></i> Источники: морепродукты, говядина, тыквенные семечки</p>
+                        </div>
+                    </div>
+
+                    <!-- Iron -->
+                    <div class="mineral-card bg-white rounded-xl p-6 border-r-red-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-tint text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Железо</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Основной компонент гемоглобина. При дефиците резко падает выносливость и VO2 max.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-600 h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-utensils mr-1"></i> Источники: красное мясо, печень, гречка, гранат</p>
+                        </div>
+                    </div>
+
+                    <!-- Calcium -->
+                    <div class="mineral-card bg-white rounded-xl p-6 border-r-yellow-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 text-yellow-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-bone text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Кальций</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Не только для костей, но и для мышечных сокращений. Дефицит увеличивает риск травм.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-600 mb-1">Дефицит у спортсменов:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-600 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fas fa-utensils mr-1"></i> Источники: молочные продукты, кунжут, миндаль, сардины</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Как витамины улучшают спортивные результаты</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-blue-100 text-blue-600 mb-4">
+                            <i class="fas fa-battery-full text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Повышение энергии</h3>
+                        <p class="text-gray-700">Витамины группы B помогают эффективнее преобразовывать пищу в энергию, снижая усталость.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-heartbeat text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Улучшение восстановления</h3>
+                        <p class="text-gray-700">Антиоксиданты (C, E) уменьшают повреждение клеток после интенсивных нагрузок.</p>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-purple-100 text-purple-600 mb-4">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Укрепление иммунитета</h3>
+                        <p class="text-gray-700">Витамины C, D и цинк снижают риск заболеваний, что особенно важно при тяжелых тренировках.</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-yellow-100 text-yellow-600 mb-4">
+                            <i class="fas fa-dumbbell text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Рост мышц</h3>
+                        <p class="text-gray-700">Витамин D и цинк способствуют синтезу анаболических гормонов.</p>
+                    </div>
+                    
+                    <div class="bg-red-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-red-100 text-red-600 mb-4">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Улучшение ментальной концентрации</h3>
+                        <p class="text-gray-700">Витамины B6, B12 и железо поддерживают когнитивные функции при нагрузках.</p>
+                    </div>
+                    
+                    <div class="bg-indigo-50 p-6 rounded-xl">
+                        <div class="benefit-icon bg-indigo-100 text-indigo-600 mb-4">
+                            <i class="fas fa-bone text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Прочность костей и суставов</h3>
+                        <p class="text-gray-700">Кальций, витамин D и K снижают риск травм опорно-двигательного аппарата.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Частые вопросы о витаминах для спортсменов</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Какие витамины особенно важны для набора мышечной массы?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Для роста мышц наиболее критичны:</p>
+                                <ul class="space-y-2 pl-5 list-disc">
+                                    <li><strong>Витамин D</strong> — повышает уровень тестостерона</li>
+                                    <li><strong>Витамин B6</strong> — улучшает усвоение белка</li>
+                                    <li><strong>Витамин C</strong> — снижает уровень кортизола</li>
+                                    <li><strong>Витамин E</strong> — защищает клеточные мембраны</li>
+                                </ul>
+                                <p class="mt-4">Из минералов ключевое значение имеют цинк и магний.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Как понять, что мне не хватает витаминов?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Основные признаки дефицита у спортсменов:</p>
+                                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                    <div class="bg-red-50 p-4 rounded-lg">
+                                        <p class="font-medium text-red-800"><i class="fas fa-tired mr-2"></i> Быстрая утомляемость, снижение выносливости</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-medium text-blue-800"><i class="fas fa-moon mr-2"></i> Плохое восстановление после тренировок</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <p class="font-medium text-yellow-800"><i class="fas fa-cramps mr-2"></i> Мышечные судороги и спазмы</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <p class="font-medium text-green-800"><i class="fas fa-head-side-cough mr-2"></i> Частые простудные заболевания</p>
+                                    </div>
+                                </div>
+                                <p class="mt-4">Точный диагноз можно поставить только по анализам крови на витамины и минералы.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Лучше получать витамины из пищи или из добавок?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Идеальный вариант — сбалансированное питание + точечная добавка дефицитных витаминов. Проблема в том, что:</p>
+                                <ul class="space-y-2 pl-5 list-disc mb-4">
+                                    <li>Современные продукты содержат меньше витаминов, чем 50 лет назад</li>
+                                    <li>Спортсменам нужно очень много есть, чтобы покрыть потребности</li>
+                                    <li>Некоторые витамины (D, B12) сложно получить в достатке из пищи</li>
+                                </ul>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="text-blue-800"><i class="fas fa-lightbulb mr-2"></i> Оптимально: 70% из пищи + 30% из качественных добавок по результатам анализов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Какие витамины нельзя принимать вместе?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Некоторые витамины и минералы конкурируют за усвоение:</p>
+                                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                    <div class="bg-red-50 p-4 rounded-lg">
+                                        <p class="font-medium"><span class="text-red-800">Кальций</span> + <span class="text-red-800">Железо</span></p>
+                                        <p class="text-sm">Принимать с интервалом 2-3 часа</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-medium"><span class="text-blue-800">Цинк</span> + <span class="text-blue-800">Медь</span></p>
+                                        <p class="text-sm">Баланс должен быть 10:1 в пользу цинка</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <p class="font-medium"><span class="text-green-800">Витамин C</span> + <span class="text-green-800">B12</span></p>
+                                        <p class="text-sm">Витамин C разрушает B12 в жидкой форме</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <p class="font-medium"><span class="text-yellow-800">Жирорастворимые витамины</span></p>
+                                        <p class="text-sm">A, D, E, K лучше принимать с пищей, содержащей жиры</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8 border border-blue-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Рекомендации по приему витаминов</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-4 text-blue-800 flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i> Основные правила
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Водорастворимые витамины (B, C) принимать утром или перед тренировкой</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Жирорастворимые (A, D, E, K) — во время еды, содержащей жиры</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Магний и кальций — вечером, они обладают расслабляющим эффектом</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Делать перерывы в приеме синтетических витаминов (1-2 месяца приема, 1 месяц перерыв)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-lg mb-4 text-green-800 flex items-center">
+                            <i class="fas fa-flask mr-3"></i> Лучшие спортивные витаминные комплексы
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-award text-xs"></i>
+                                </div>
+                                <span><strong>Opti-Men</strong> (для мужчин) и <strong>Opti-Women</strong> (для женщин) от Optimum Nutrition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-award text-xs"></i>
+                                </div>
+                                <span><strong>Animal Pak</strong> от Universal Nutrition (очень мощный комплекс)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-award text-xs"></i>
+                                </div>
+                                <span><strong>Daily Vitamins</strong> от MyProtein (хорошее соотношение цены и качества)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                                    <i class="fas fa-award text-xs"></i>
+                                </div>
+                                <span><strong>Alphabet Энергия</strong> (российский аналог с адаптированным составом)</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 bg-white p-4 rounded-lg shadow-sm">
+                            <p class="text-sm"><i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i> Перед приемом любых добавок желательно сдать анализы и проконсультироваться с врачом</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Спортивное питание</h3>
+                        <p class="text-gray-400">Научный подход к тренировкам и восстановлению</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2023 Все права защищены. Информация предоставлена в ознакомительных целях.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

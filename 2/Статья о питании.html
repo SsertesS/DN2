@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питание до и после тренировки: научный подход</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #e5e7eb;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+        }
+        .meal-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .meal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .nutrient-bar {
+            height: 8px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .nutrient-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        .faq-item {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Питание до и после тренировки</h1>
+                <p class="text-xl opacity-90 mb-8">Научный подход: что есть перед тренировкой для энергии и после для восстановления</p>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 inline-block">
+                    <p class="font-medium"><i class="fas fa-flask mr-2"></i> Основано на последних исследованиях спортивной нутрициологии</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <!-- Introduction -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block mr-6">
+                        <div class="bg-blue-100 text-blue-800 text-2xl p-4 rounded-xl">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Почему питание вокруг тренировки так важно?</h2>
+                        <p class="text-gray-700 mb-4">Согласно исследованиям, правильное питание до и после тренировки может увеличить ее эффективность на 20-30%. Питание перед тренировкой обеспечивает энергию и предотвращает катаболизм, а посттренировочное питание критически важно для восстановления и роста мышц.</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-medium text-blue-800"><i class="fas fa-bolt mr-2"></i> До 25% больше энергии</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="font-medium text-purple-800"><i class="fas fa-muscle mr-2"></i> На 30% лучше восстановление</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-medium text-green-800"><i class="fas fa-chart-line mr-2"></i> На 15% больше прогресса</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pre-Workout Nutrition -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Питание перед тренировкой</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4"><i class="fas fa-clock mr-2"></i> Временные рамки</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-blue-500">
+                            <i class="fas fa-1"></i>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">За 2-3 часа до тренировки</h4>
+                            <p class="text-gray-700">Полноценный прием пищи с углеводами, белками и небольшим количеством полезных жиров. Это оптимальное время для усвоения нутриентов.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-purple-500">
+                            <i class="fas fa-2"></i>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-2">За 30-60 минут до тренировки</h4>
+                            <p class="text-gray-700">Легкий перекус с быстрыми углеводами и небольшим количеством белка. Подходит, если не было возможности поесть заранее.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-green-500">
+                            <i class="fas fa-3"></i>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-2">Сразу перед тренировкой</h4>
+                            <p class="text-gray-700">Только быстрые углеводы (например, банан) или BCAA, если тренировка натощак. Не рекомендуется для длительных интенсивных тренировок.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-blue-700 mb-4"><i class="fas fa-utensils mr-2"></i> Оптимальные продукты</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Meal 1 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-blue-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-bread-slice"></i>
+                            </div>
+                            <h4 class="font-bold">Углеводы</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Основной источник энергии. Выбирайте сложные углеводы за 2-3 часа и простые за 30-60 минут.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Овсянка, банан, рис, гречка, цельнозерновой хлеб</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-blue-500" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meal 2 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-purple-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-purple-100 text-purple-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-drumstick-bite"></i>
+                            </div>
+                            <h4 class="font-bold">Белки</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Предотвращают катаболизм и обеспечивают аминокислотами для восстановления.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Курица, индейка, яйца, рыба, протеиновый коктейль</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-purple-500" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meal 3 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-yellow-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-avocado"></i>
+                            </div>
+                            <h4 class="font-bold">Жиры</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Необходимы в небольших количествах, но могут замедлять пищеварение перед тренировкой.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Орехи, авокадо, оливковое масло (в основном приеме пищи)</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-yellow-500" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb mr-2"></i> Примеры предтренировочных приемов пищи</h4>
+                    <div class="grid md:grid-cols-2 gap-4 mt-3">
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="font-medium text-gray-800">За 2-3 часа до тренировки:</p>
+                            <p class="text-sm text-gray-700">Гречка с куриной грудкой + овощи + 1 ч.л. оливкового масла</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="font-medium text-gray-800">За 30-60 минут до тренировки:</p>
+                            <p class="text-sm text-gray-700">Банан + 150г творога или протеиновый коктейль</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post-Workout Nutrition -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Питание после тренировки</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-purple-700 mb-4"><i class="fas fa-clock mr-2"></i> Анаболическое окно</h3>
+                    <p class="text-gray-700 mb-4">После тренировки в течение 30-45 минут открывается так называемое "анаболическое окно" — период, когда организм особенно восприимчив к питательным веществам и активно восстанавливает мышечную ткань.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <p class="font-medium text-purple-800"><i class="fas fa-fire mr-2"></i> Гликоген</p>
+                            <p class="text-sm text-gray-700">В первые 30 мин скорость восполнения гликогена на 50% выше</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="font-medium text-blue-800"><i class="fas fa-dna mr-2"></i> Синтез белка</p>
+                            <p class="text-sm text-gray-700">Пик синтеза мышечного белка через 1-2 часа после тренировки</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <p class="font-medium text-green-800"><i class="fas fa-tint mr-2"></i> Гидратация</p>
+                            <p class="text-sm text-gray-700">Восполнение жидкости и электролитов критически важно</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-purple-700 mb-4"><i class="fas fa-utensils mr-2"></i> Оптимальные продукты</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Meal 1 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-blue-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-drumstick-bite"></i>
+                            </div>
+                            <h4 class="font-bold">Белки</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Критически важны для восстановления и роста мышц. Быстроусвояемые формы предпочтительнее.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Сывороточный протеин, яйца, курица, рыба, творог</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-blue-500" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meal 2 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-green-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 text-green-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-bread-slice"></i>
+                            </div>
+                            <h4 class="font-bold">Углеводы</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Восполняют запасы гликогена. Чем интенсивнее тренировка, тем больше углеводов требуется.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Рис, картофель, фрукты, мед, цельнозерновые продукты</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-green-500" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meal 3 -->
+                    <div class="meal-card bg-white rounded-lg p-4 border border-gray-200 border-l-yellow-500">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4 class="font-bold">Антиоксиданты</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Помогают бороться с окислительным стрессом после тренировки.</p>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <p class="font-medium">Лучшие варианты:</p>
+                            <p>Ягоды, зеленые овощи, орехи, зеленый чай</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Рекомендуемое количество:</p>
+                            <div class="nutrient-bar bg-gray-200">
+                                <div class="nutrient-fill bg-yellow-500" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-purple-800 mb-2"><i class="fas fa-lightbulb mr-2"></i> Примеры посттренировочных приемов пищи</h4>
+                    <div class="grid md:grid-cols-2 gap-4 mt-3">
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="font-medium text-gray-800">Сразу после тренировки (в течение 30 мин):</p>
+                            <p class="text-sm text-gray-700">Сывороточный протеин + банан или мед</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="font-medium text-gray-800">Через 1-1.5 часа после тренировки:</p>
+                            <p class="text-sm text-gray-700">Рис с курицей/рыбой + овощи</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hydration -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Гидратация и электролиты</h2>
+                
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block mr-6">
+                        <div class="bg-blue-100 text-blue-800 text-2xl p-4 rounded-xl">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 mb-4">Потеря всего 2% жидкости от массы тела снижает работоспособность на 20%. После интенсивной тренировки важно не только пить воду, но и восполнять электролиты.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <h3 class="font-bold text-blue-800 mb-3"><i class="fas fa-glass-whiskey mr-2"></i> Рекомендации по гидратации:</h3>
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>500 мл воды за 2 часа до тренировки</li>
+                                    <li>150-250 мл каждые 15-20 минут во время тренировки</li>
+                                    <li>500-750 мл на каждые 0.5 кг потерянного веса после тренировки</li>
+                                    <li>Моча должна быть светло-соломенного цвета</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-purple-800 mb-3"><i class="fas fa-bolt mr-2"></i> Ключевые электролиты:</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <div class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3">
+                                            <i class="fas fa-salt"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium">Натрий</p>
+                                            <p class="text-xs text-gray-600">Основной электролит, теряемый с потом</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="bg-purple-100 text-purple-800 p-2 rounded-lg mr-3">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium">Калий</p>
+                                            <p class="text-xs text-gray-600">Важен для мышечных сокращений</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="bg-green-100 text-green-800 p-2 rounded-lg mr-3">
+                                            <i class="fas fa-bone"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium">Магний</p>
+                                            <p class="text-xs text-gray-600">Снижает мышечные спазмы</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Частые вопросы о питании вокруг тренировки</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Можно ли тренироваться на голодный желудок?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Тренировки натощак имеют как преимущества, так и недостатки:</p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-medium text-blue-800"><i class="fas fa-thumbs-up mr-2"></i> Преимущества</p>
+                                        <ul class="list-disc pl-5 mt-2 text-sm">
+                                            <li>Может усилить жиросжигание</li>
+                                            <li>Подходит для низкоинтенсивных тренировок</li>
+                                            <li>Некоторые чувствуют себя легче</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-red-50 p-4 rounded-lg">
+                                        <p class="font-medium text-red-800"><i class="fas fa-thumbs-down mr-2"></i> Недостатки</p>
+                                        <ul class="list-disc pl-5 mt-2 text-sm">
+                                            <li>Снижение интенсивности тренировки</li>
+                                            <li>Риск катаболизма мышц</li>
+                                            <li>Может вызывать головокружение</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><strong>Совет:</strong> Если тренируетесь натощак, принимайте BCAA перед тренировкой и уделяйте особое внимание посттренировочному питанию.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Что лучше после тренировки: жидкая или твердая пища?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Исследования показывают, что в первые 30-45 минут после тренировки жидкая пища (например, протеиновый коктейль) имеет преимущества:</p>
+                                <ul class="list-disc pl-5 space-y-2 mb-4">
+                                    <li><strong>Быстрее усваивается</strong> - попадает в кровь уже через 15-20 минут</li>
+                                    <li><strong>Легче для желудка</strong> - после интенсивной тренировки аппетит часто снижен</li>
+                                    <li><strong>Точное дозирование</strong> - проще контролировать количество белка и углеводов</li>
+                                </ul>
+                                <p>Однако через 1-1.5 часа после тренировки рекомендуется полноценный прием твердой пищи, который обеспечит более продолжительное поступление питательных веществ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Как питаться при утренних/вечерних тренировках?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full mb-4">
+                                        <thead class="bg-gray-100">
+                                            <tr>
+                                                <th class="font-semibold p-3 text-left">Время</th>
+                                                <th class="font-semibold p-3 text-left">Перед тренировкой</th>
+                                                <th class="font-semibold p-3 text-left">После тренировки</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-200">
+                                                <td class="p-3 font-medium">Утро (6-8 утра)</td>
+                                                <td class="p-3">Быстрые углеводы (банан, сок) + BCAA или легкий белковый коктейль</td>
+                                                <td class="p-3">Полноценный завтрак с белками и углеводами через 30-60 минут</td>
+                                            </tr>
+                                            <tr class="border-b border-gray-200">
+                                                <td class="p-3 font-medium">День (12-14 часов)</td>
+                                                <td class="p-3">Обычный обед за 2-3 часа или перекус за 30-60 минут</td>
+                                                <td class="p-3">Протеиновый коктейль сразу после, затем ужин через 1.5-2 часа</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-3 font-medium">Вечер (18-20 часов)</td>
+                                                <td class="p-3">Полноценный ужин за 2-3 часа или перекус за 30-60 минут</td>
+                                                <td class="p-3">Легкий белковый прием (творог, казеин) + немного овощей</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p><strong>Важно:</strong> При вечерних тренировках избегайте большого количества быстрых углеводов после тренировки, чтобы не мешать ночному жиросжиганию.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Recommendations -->
+            <section class="mb-16 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">5 золотых правил питания вокруг тренировки</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Углеводы перед, белки после</h3>
+                            <p class="text-gray-700">Перед тренировкой — энергия (углеводы), после — восстановление (белки).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Не забывайте о времени</h3>
+                            <p class="text-gray-700">Последний прием пищи за 2-3 часа до тренировки, первый после — в течение 30-45 минут.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Гидратация важнее еды</h3>
+                            <p class="text-gray-700">Потеря жидкости влияет на производительность сильнее, чем пропуск приема пищи.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Адаптируйте под свои цели</h3>
+                            <p class="text-gray-700">На массе — больше углеводов, на сушке — акцент на белки, меньше углеводов.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Экспериментируйте и наблюдайте</h3>
+                            <p class="text-gray-700">Тестируйте разные схемы и выбирайте то, что лучше работает именно для вас.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-indigo-800 mb-3 text-center"><i class="fas fa-lightbulb mr-2"></i> Итоговый совет</h3>
+                    <p class="text-gray-700 text-center">Питание вокруг тренировки — это 20-30% вашего прогресса. Найдите свою идеальную формулу, сочетая научные рекомендации с индивидуальными особенностями организма.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Спортивная нутрициология PRO</h3>
+                        <p class="text-gray-400">Научный подход к вашему питанию</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2023 Все права защищены. Информация предоставлена в ознакомительных целях и не заменяет консультацию специалиста.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

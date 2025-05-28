@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кардио для похудения: мифы и правда</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+        }
+        .cardio-card {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .cardio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .zone-indicator {
+            height: 8px;
+            border-radius: 4px;
+        }
+        .faq-item {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Кардио для похудения: мифы и правда</h1>
+                <p class="text-xl opacity-90 mb-8">Как правильно делать кардио, чтобы сжигать жир, а не мышцы</p>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 inline-block pulse-animation">
+                    <p class="font-medium"><i class="fas fa-fire-alt mr-2"></i> Научный подход к жиросжиганию</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <!-- Introduction -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block mr-6">
+                        <div class="bg-blue-100 text-blue-800 text-2xl p-4 rounded-xl">
+                            <i class="fas fa-running"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Почему кардио работает не для всех?</h2>
+                        <p class="text-gray-700 mb-4">Большинство людей делают кардио неправильно, теряя вместе с жиром драгоценные мышцы и замедляя метаболизм. Научные исследования показывают, что эффективность кардио зависит от типа нагрузки, времени выполнения и сочетания с силовыми тренировками.</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-medium text-blue-800"><i class="fas fa-heartbeat mr-2"></i> 65-75% от max пульса — оптимальная зона жиросжигания</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-medium text-green-800"><i class="fas fa-clock mr-2"></i> 20-40 мин — идеальная продолжительность</p>
+                            </div>
+                            <div class="bg-teal-50 p-4 rounded-lg">
+                                <p class="font-medium text-teal-800"><i class="fas fa-dumbbell mr-2"></i> + силовые = на 30% эффективнее</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Myths vs Facts -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Мифы и правда о кардио для похудения</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Myth 1 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-red-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-times text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Миф: Чем больше кардио, тем лучше</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Избыток кардио (более 4-5 часов в неделю) приводит к катаболизму мышц и снижению основного обмена. Исследования показывают, что после 40-60 минут кардио организм начинает использовать белки как источник энергии.</p>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-exclamation-triangle mr-2"></i> Более 5 часов кардио в неделю снижают мышечную массу на 12-17%</p>
+                        </div>
+                    </div>
+
+                    <!-- Fact 1 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-green-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-check text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Правда: Интервалы эффективнее</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">HIIT (высокоинтенсивный интервальный тренинг) сжигает на 25-30% больше жира за меньшее время и вызывает эффект "дожигания" калорий (EPOC) до 48 часов после тренировки.</p>
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-bolt mr-2"></i> 20 мин HIIT = 40 мин обычного кардио по жиросжиганию</p>
+                        </div>
+                    </div>
+
+                    <!-- Myth 2 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-red-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-times text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Миф: Кардио натощак сжигает больше жира</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Хотя теоретически утром запасы гликогена ниже, исследования не подтверждают значимого преимущества. Более того, утреннее кардио без "топлива" может привести к потере мышечной массы.</p>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fas fa-coffee mr-2"></i> Лучше выпить BCAA или легкий протеин перед утренним кардио</p>
+                        </div>
+                    </div>
+
+                    <!-- Fact 2 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-green-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-check text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Правда: Время суток имеет значение</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Кардио после силовой тренировки сжигает на 20-25% больше жира, так как гликоген уже частично израсходован. Вечернее кардио (за 3-4 часа до сна) также эффективно для похудения.</p>
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fas fa-dumbbell mr-2"></i> Оптимально: силовая → 20-30 мин кардио</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Heart Rate Zones -->
+            <section class="mb-16 bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Зоны пульса для максимального жиросжигания</h2>
+                
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm text-gray-600">50% от max</span>
+                        <span class="text-sm text-gray-600">100% от max</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4 mb-6">
+                        <div class="h-4 rounded-full" style="background: linear-gradient(90deg, #3b82f6 0%, #10b981 50%, #ef4444 100%); width: 100%"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-5 gap-4">
+                        <!-- Zone 1 -->
+                        <div class="text-center">
+                            <div class="zone-indicator bg-blue-500 mb-2" style="width: 100%; height: 6px;"></div>
+                            <h3 class="font-medium text-blue-700">50-60%</h3>
+                            <p class="text-sm text-gray-600">Разминка/заминка</p>
+                            <p class="text-xs mt-1">Сжигание: 30% жира</p>
+                        </div>
+                        
+                        <!-- Zone 2 -->
+                        <div class="text-center">
+                            <div class="zone-indicator bg-teal-400 mb-2" style="width: 100%; height: 8px;"></div>
+                            <h3 class="font-medium text-teal-700">60-70%</h3>
+                            <p class="text-sm text-gray-600">Легкая активность</p>
+                            <p class="text-xs mt-1">Сжигание: 50% жира</p>
+                        </div>
+                        
+                        <!-- Zone 3 -->
+                        <div class="text-center">
+                            <div class="zone-indicator bg-green-500 mb-2" style="width: 100%; height: 10px;"></div>
+                            <h3 class="font-medium text-green-700 pulse-animation">70-80%</h3>
+                            <p class="text-sm text-gray-600">Аэробная зона</p>
+                            <p class="text-xs mt-1">Сжигание: 65% жира</p>
+                        </div>
+                        
+                        <!-- Zone 4 -->
+                        <div class="text-center">
+                            <div class="zone-indicator bg-yellow-500 mb-2" style="width: 100%; height: 8px;"></div>
+                            <h3 class="font-medium text-yellow-700">80-90%</h3>
+                            <p class="text-sm text-gray-600">Анаэробная зона</p>
+                            <p class="text-xs mt-1">Сжигание: 45% жира</p>
+                        </div>
+                        
+                        <!-- Zone 5 -->
+                        <div class="text-center">
+                            <div class="zone-indicator bg-red-500 mb-2" style="width: 100%; height: 6px;"></div>
+                            <h3 class="font-medium text-red-700">90-100%</h3>
+                            <p class="text-sm text-gray-600">Максимальная</p>
+                            <p class="text-xs mt-1">Сжигание: 30% жира</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-blue-800 mb-2"><i class="fas fa-calculator mr-2"></i> Как рассчитать свою целевую зону?</h3>
+                    <p class="text-gray-700">Формула Карвонена: (220 - возраст - пульс в покое) × 0.6-0.7 + пульс в покое = оптимальный пульс для жиросжигания</p>
+                    <div class="mt-3 grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="text-sm"><span class="font-medium">Пример:</span> 30 лет, пульс в покое 60</p>
+                            <p class="text-sm">(220-30-60)×0.65 + 60 = <span class="font-bold">144 уд/мин</span></p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg">
+                            <p class="text-sm"><span class="font-medium">Совет:</span> Используйте фитнес-браслет для контроля</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Cardio Types -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Лучшие виды кардио для сохранения мышц</h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Type 1 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-blue-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-walking text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Ходьба в гору</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Наклон 5-15%, скорость 4-6 км/ч. Минимальная нагрузка на суставы, сохраняет мышцы, сжигает 300-400 ккал/ч.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                                <span class="text-sm">Для кого: новички, после травм</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                                <span class="text-sm">Когда: утром или после силовой</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Type 2 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-green-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 text-green-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-biking text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Велосипед/Эллипс</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Средняя интенсивность, сопротивление 60-70% от max. Сжигает 500-600 ккал/ч, минимальный катаболизм.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                <span class="text-sm">Для кого: все уровни подготовки</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                <span class="text-sm">Когда: в дни отдыха или после тренировки</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Type 3 -->
+                    <div class="cardio-card bg-white rounded-xl p-6 border-b-purple-500">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 text-purple-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">HIIT</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Соотношение работы/отдыха 1:2 (30 сек спринт, 1 мин ходьба). Сжигает 400-500 ккал за 20 мин + дожигание.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-sm">Для кого: опытные, без проблем с сердцем</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-sm">Когда: отдельные дни или после силовой</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weekly Plan -->
+            <section class="mb-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8 border border-blue-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Оптимальный недельный план кардио</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-blue-100">
+                            <tr>
+                                <th class="py-3 px-4 text-left">День</th>
+                                <th class="py-3 px-4 text-left">Тип кардио</th>
+                                <th class="py-3 px-4 text-left">Длительность</th>
+                                <th class="py-3 px-4 text-left">Когда</th>
+                                <th class="py-3 px-4 text-left">Ккал</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Понедельник</td>
+                                <td class="py-3 px-4">HIIT (велосипед)</td>
+                                <td class="py-3 px-4">20 мин</td>
+                                <td class="py-3 px-4">После силовой</td>
+                                <td class="py-3 px-4">≈450</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-3 px-4 font-medium">Вторник</td>
+                                <td class="py-3 px-4">Ходьба в гору</td>
+                                <td class="py-3 px-4">30 мин</td>
+                                <td class="py-3 px-4">Утро</td>
+                                <td class="py-3 px-4">≈350</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Среда</td>
+                                <td class="py-3 px-4">Отдых</td>
+                                <td class="py-3 px-4">-</td>
+                                <td class="py-3 px-4">-</td>
+                                <td class="py-3 px-4">-</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-3 px-4 font-medium">Четверг</td>
+                                <td class="py-3 px-4">Эллипс (умеренно)</td>
+                                <td class="py-3 px-4">25 мин</td>
+                                <td class="py-3 px-4">После силовой</td>
+                                <td class="py-3 px-4">≈400</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Пятница</td>
+                                <td class="py-3 px-4">Плавание</td>
+                                <td class="py-3 px-4">30 мин</td>
+                                <td class="py-3 px-4">Вечер</td>
+                                <td class="py-3 px-4">≈500</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-3 px-4 font-medium">Суббота</td>
+                                <td class="py-3 px-4">Интервальный бег</td>
+                                <td class="py-3 px-4">20 мин</td>
+                                <td class="py-3 px-4">Утро</td>
+                                <td class="py-3 px-4">≈450</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Воскресенье</td>
+                                <td class="py-3 px-4">Активный отдых</td>
+                                <td class="py-3 px-4">60 мин</td>
+                                <td class="py-3 px-4">День</td>
+                                <td class="py-3 px-4">≈300</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="bg-blue-50">
+                            <tr>
+                                <td class="py-3 px-4 font-bold" colspan="4">Итого за неделю:</td>
+                                <td class="py-3 px-4 font-bold">≈2450 ккал</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb mr-2"></i> Советы:</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Сочетайте разные виды кардио</li>
+                            <li>Не превышайте 3-4 часа кардио в неделю</li>
+                            <li>Делайте перерывы 1-2 дня без кардио</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-green-800 mb-2"><i class="fas fa-utensils mr-2"></i> Питание:</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>BCAA во время длительного кардио</li>
+                            <li>Белково-углеводный прием после</li>
+                            <li>+300-500 ккал к дефициту от кардио</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Частые вопросы о кардио и похудении</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Как делать кардио, чтобы не терять мышцы?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Стратегия сохранения мышц при кардио:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-medium text-blue-800"><i class="fas fa-clock mr-2"></i> Не более 40 мин за сессию</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <p class="font-medium text-green-800"><i class="fas fa-heartbeat mr-2"></i> Пульс 120-140 уд/мин</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <p class="font-medium text-purple-800"><i class="fas fa-capsules mr-2"></i> BCAA перед/во время</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <p class="font-medium text-yellow-800"><i class="fas fa-dumbbell mr-2"></i> Силовые 3-4 раза в неделю</p>
+                                    </div>
+                                </div>
+                                <p class="mt-4"><strong>Важно:</strong> дефицит калорий не должен превышать 20% от нормы!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Почему вес стоит на месте, хотя я делаю кардио?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Возможные причины:</p>
+                                <ul class="list-disc pl-5 space-y-2 mb-4">
+                                    <li><strong>Адаптация организма</strong> — через 4-6 недель эффективность снижается</li>
+                                    <li><strong>Компенсация калорий</strong> — после кардио больше едите</li>
+                                    <li><strong>Задержка воды</strong> — особенно при высокоинтенсивном кардио</li>
+                                    <li><strong>Потеря мышц</strong> — метаболизм замедляется</li>
+                                </ul>
+                                <div class="bg-pink-50 p-4 rounded-lg">
+                                    <p class="text-pink-800"><i class="fas fa-sync-alt mr-2"></i> Решение: меняйте тип кардио каждые 3-4 недели, контролируйте питание, делайте замеры тела, а не только взвешивайтесь</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Как сочетать кардио и силовые для похудения?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p class="mb-3">Оптимальные схемы сочетания:</p>
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white rounded-lg overflow-hidden mb-4">
+                                        <thead class="bg-gray-100">
+                                            <tr>
+                                                <th class="py-3 px-4 text-left">Цель</th>
+                                                <th class="py-3 px-4 text-left">Силовые</th>
+                                                <th class="py-3 px-4 text-left">Кардио</th>
+                                                <th class="py-3 px-4 text-left">Примечание</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="py-3 px-4">Сушка (опытные)</td>
+                                                <td class="py-3 px-4">4-5 раз/нед</td>
+                                                <td class="py-3 px-4">3-4 раза/нед (HIIT + LISS)</td>
+                                                <td class="py-3 px-4">После силовой или утро</td>
+                                            </tr>
+                                            <tr class="bg-gray-50">
+                                                <td class="py-3 px-4">Похудение (новички)</td>
+                                                <td class="py-3 px-4">3 раза/нед</td>
+                                                <td class="py-3 px-4">2-3 раза/нед (LISS)</td>
+                                                <td class="py-3 px-4">В дни без силовой</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4">Поддержание формы</td>
+                                                <td class="py-3 px-4">3 раза/нед</td>
+                                                <td class="py-3 px-4">1-2 раза/нед (любое)</td>
+                                                <td class="py-3 px-4">По желанию</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="text-blue-800"><i class="fas fa-balance-scale mr-2"></i> Главное правило: приоритет силовым, если цель — сохранить мышцы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Фитнес-эксперт</h3>
+                        <p class="text-gray-400">Научный подход к тренировкам и питанию</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-vk text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2023 Все права защищены. Информация предоставлена в ознакомительных целях.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

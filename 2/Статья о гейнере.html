@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гейнеры или протеин: что выбрать?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .comparison-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .proteincard {
+            border-top-color: #3b82f6;
+        }
+        .gainercard {
+            border-top-color: #8b5cf6;
+        }
+        .nutrient-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Гейнеры или протеин: что выбрать?</h1>
+                <p class="text-xl opacity-90">Сравниваем два популярных продукта и помогаем сделать правильный выбор</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Intro -->
+            <section class="mb-12 bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                        <i class="fas fa-question text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Основное отличие</h2>
+                </div>
+                <p class="text-gray-700 mb-4">Гейнеры и протеин — это две самые популярные добавки в спортивном питании, но они служат разным целям и подходят разным людям.</p>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium"><i class="fas fa-lightbulb mr-2"></i> Протеин — это концентрированный белок (70-95% содержания), а гейнер — это белково-углеводная смесь с добавлением жиров (20-50% белка, 40-70% углеводов).</p>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Сравнительная таблица</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="comparison-card proteincard bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <h3 class="font-bold text-xl">Протеин</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Высокое содержание белка (70-95%)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Низкое содержание углеводов и жиров</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Подходит для похудения и сушки</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Идеален при наборе качественной массы</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Меньше калорий на порцию</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card gainercard bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="font-bold text-xl">Гейнер</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                <span>Сбалансированное соотношение Б/У/Ж</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                <span>Высококалорийный продукт</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                <span>Помогает быстро набрать массу</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                <span>Подходит эктоморфам (худым от природы)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                <span>Удобен при недостатке времени на питание</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who Needs What -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Кому что подходит?</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg">Эктоморфам (худощавое телосложение)</h3>
+                        </div>
+                        <p class="text-gray-700">Рекомендуется гейнер для быстрого набора массы. Можно сочетать с протеином.</p>
+                        <div class="mt-4 bg-purple-50 p-3 rounded-lg">
+                            <p class="text-purple-800 text-sm"><i class="fas fa-info-circle mr-1"></i> Порция гейнера может давать 600-1000 ккал, что помогает преодолеть дефицит калорий.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg">Мезоморфам (среднее телосложение)</h3>
+                        </div>
+                        <p class="text-gray-700">Лучше использовать протеин, иногда добавляя гейнер при интенсивных нагрузках.</p>
+                        <div class="mt-4 bg-blue-50 p-3 rounded-lg">
+                            <p class="text-blue-800 text-sm"><i class="fas fa-info-circle mr-1"></i> Можно делать самодельный гейнер, смешивая протеин с бананом, овсянкой и арахисовой пастой.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg">Эндоморфам (склонность к полноте)</h3>
+                        </div>
+                        <p class="text-gray-700">Только протеин. Гейнер может привести к набору лишнего жира.</p>
+                        <div class="mt-4 bg-blue-50 p-3 rounded-lg">
+                            <p class="text-blue-800 text-sm"><i class="fas fa-info-circle mr-1"></i> При похудении выбирайте изоляты или гидролизаты с минимальным содержанием углеводов.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nutrient Comparison -->
+            <section class="mb-12 bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Сравнение пищевой ценности</h2>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Белок (на 100 г)</span>
+                            <span class="text-gray-600">70-95 г (протеин) vs 20-50 г (гейнер)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            <div class="bg-purple-600 h-2.5 rounded-full -mt-2.5" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Углеводы (на 100 г)</span>
+                            <span class="text-gray-600">1-5 г (протеин) vs 50-70 г (гейнер)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 5%"></div>
+                            <div class="bg-purple-600 h-2.5 rounded-full -mt-2.5" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Калорийность (на порцию)</span>
+                            <span class="text-gray-600">120-150 ккал (протеин) vs 600-1000 ккал (гейнер)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 15%"></div>
+                            <div class="bg-purple-600 h-2.5 rounded-full -mt-2.5" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                    <p class="text-blue-800"><i class="fas fa-info-circle mr-2"></i> Внимательно изучайте состав! Некоторые дешевые гейнеры содержат много сахара и мало качественного белка.</p>
+                </div>
+            </section>
+
+            <!-- When to Take -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Когда что лучше принимать?</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="font-semibold text-lg mb-4 text-blue-600 flex items-center">
+                            <i class="fas fa-glass-whiskey mr-2"></i> Протеин
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Утром после пробуждения</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Перед сном (казеиновый протеин)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Между приемами пищи как перекус</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>После тренировки (с быстрыми углеводами)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="font-semibold text-lg mb-4 text-purple-600 flex items-center">
+                            <i class="fas fa-blender mr-2"></i> Гейнер
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>После тренировки для закрытия белково-углеводного окна</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Утром, если нет времени на полноценный завтрак</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Между основными приемами пищи при наборе массы</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Перед сном (только качественные гейнеры с медленными углеводами)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Частые вопросы</h2>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Можно ли смешивать протеин и гейнер?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Да, это допустимый вариант, особенно для эктоморфов, которым сложно набирать массу. Так вы получите больше белка, чем из чистого гейнера, и больше калорий, чем из чистого протеина. Оптимальное соотношение — 1 мерная ложка протеина + 0,5-1 мерная ложка гейнера.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Что лучше для похудения?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Определенно протеин, так как он содержит минимум углеводов и жиров. Лучше выбирать изолят или гидролизат сывороточного протеина. Гейнер при похудении противопоказан, так как его высокая калорийность может свести на нет дефицит калорий.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Какой протеин лучше сочетается с гейнером?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Для совместного приема лучше использовать сывороточный протеин (концентрат или изолят). Казеин хуже сочетается с гейнером, так как замедляет усвоение питательных веществ. Также можно использовать многокомпонентные протеиновые смеси.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h3 class="font-semibold text-lg">Можно ли заменить гейнер домашними продуктами?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-0">
+                            <div class="pb-6 text-gray-700">
+                                <p>Да, самодельный гейнер может быть даже полезнее покупного. Рецепт: 50 г овсяных хлопьев, 30 г протеина, 1 банан, 300 мл молока, 1 ч.л. арахисовой пасты. Это даст около 600 ккал с качественными нутриентами без лишнего сахара.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-100">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <i class="fas fa-check-circle text-3xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Итоговые рекомендации</h2>
+                        <div class="grid md:grid-cols-2 gap-6 text-gray-700">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2 text-blue-600">Выбирайте протеин если:</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Хотите набрать качественную мышечную массу без жира</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Находитесь на сушке или похудении</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Имеете склонность к набору лишнего веса</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2 text-purple-600">Выбирайте гейнер если:</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                        <span>Обладаете худощавым телосложением (эктоморф)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                        <span>Не можете набрать массу из-за недостатка калорий</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                                        <span>Имеете очень быстрый метаболизм</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-white p-4 rounded-lg">
+                            <p class="font-medium"><i class="fas fa-star text-yellow-500 mr-2"></i> Для большинства мезоморфов оптимальным выбором будет качественный сывороточный протеин с возможностью иногда добавлять гейнер в период интенсивных нагрузок.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Спортивное питание и добавки. Все права защищены.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
